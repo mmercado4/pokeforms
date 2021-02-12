@@ -5,17 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!--Aquí es prefijo "css"-->
+    <link rel="stylesheet" href="css/styles.css" />
     <script src="js/getAll.js" defer></script>
+    <!--Aquí js no es prefijo, es la subcarpeta de PUBLIC-->
     <title>PokeApi</title>
   </head>
   <body>
-    <h1 class="mb-4">Listado Pokemon</h1>
-    <ul class="list-group">
-      <li class="list-group-item active" aria-current="true">An active item</li>
-      <li class="list-group-item">A second item</li>
-      <li class="list-group-item">A third item</li>
-      <li class="list-group-item">A fourth item</li>
-      <li class="list-group-item">And a fifth one</li>
-    </ul>
+    <div class="container">
+      <h1 class="text-center mt-4 mb-4">Listado Pokemon</h1>
+      <ul class="list-group poke-list"></ul>
+    </div>
   </body>
 </html>
