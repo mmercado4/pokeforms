@@ -1,7 +1,19 @@
 body {
-  background-color: #dddddd;
+  background-color: white;
 }
 
-h1 {
-  color: #30475e;
+h2 {
+  color: #2872b8;
+}
+
+.poke-list li {
+  color: #2872b8;
+  transition: color 0.3s linear;
+  background-color: whitesmoke;
+}
+
+ul.poke-list li:hover {
+  transition: color 0.3s linear;
+  color: #b61f2b;
+  cursor: pointer;
 }

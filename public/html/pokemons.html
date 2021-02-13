@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!--Aquí es prefijo "css"-->
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/getAll.js" defer></script>
+    <!--Aquí js no es prefijo, es la subcarpeta de PUBLIC-->
+    <title>PokeApi</title>
+  </head>
+  <body class="mb-5 mt-3">
+    <div class="container">
+      <a href="pokemons"
+        ><img src="img/logo.png" class="d-block w-75 mx-auto" alt="..."
+      /></a>
+      <h2 class="text-center mt-4 mb-4">PokeApi</h2>
+      <div class="mb-4">
+        <ul class="nav justify-content-center nav-pills">
+          <li class="nav-item">
+            <a class="nav-link active" href="pokemons">Pokémons</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="addpokemon">Add</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="deletepokemons">Delete</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="pages">Pages</a>
+          </li>
+        </ul>
+      </div>
+      <ul class="list-group poke-list shadow"></ul>
+    </div>
+  </body>
+</html>

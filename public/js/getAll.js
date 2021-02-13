@@ -7,10 +7,10 @@ const getAllPokemons = () => {
     .then((data) => {
       //console.log(data);
       let pokeList = data.pokemons
-        .map(
-          (pokemon) =>
-            `<li class="text-center list-group-item">${pokemon.name}</li>`
-        )
+        .map((pokemon) => {
+          let name = pokemon.name[0].toUpperCase() + pokemon.name.substring(1);
+          return `<li class="text-center list-group-item">${name}</li>`;
+        })
         .join("");
       list.innerHTML = pokeList;
     })
