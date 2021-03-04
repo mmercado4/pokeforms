@@ -17,3 +17,7 @@ ul.poke-list li:hover {
   color: #b61f2b;
   cursor: pointer;
 }
+
+.none {
+  display: none;
+}

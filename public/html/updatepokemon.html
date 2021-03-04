@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <!--Aquí es prefijo "css"-->
     <link rel="stylesheet" href="css/styles.css" />
-    <script src="js/getAll.js" defer></script>
     <!--Aquí js no es prefijo, es la subcarpeta de PUBLIC-->
+    <script src="/js/put.js" defer></script>
     <title>PokeApi</title>
   </head>
   <body class="mb-5 mt-3">
@@ -16,11 +16,11 @@
       <a href="pokemons"
         ><img src="img/logo.png" class="d-block w-75 mx-auto" alt="..."
       /></a>
-      <h2 class="text-center mt-4 mb-4">PokeApi</h2>
+      <h2 class="text-center mb-4 mt-4">Add new Pokémon</h2>
       <div class="mb-4">
         <ul class="nav justify-content-center nav-pills">
           <li class="nav-item">
-            <a class="nav-link active" href="pokemons">Pokémons</a>
+            <a class="nav-link" href="pokemons">Pokémons</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="addpokemon">Add</a>
@@ -32,11 +32,42 @@
             <a class="nav-link" href="pages">Pages</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="updatepokemon">Update</a>
+            <a class="nav-link active" href="updatepokemon">Update</a>
           </li>
         </ul>
       </div>
-      <ul class="list-group poke-list shadow"></ul>
+
+      <form>
+        <div class="input-group mb-3">
+          <input
+            type="number"
+            class="form-control"
+            id="search-id"
+            placeholder="Search your Pokémon"
+          />
+          <button
+            class="btn btn-outline-secondary"
+            type="button"
+            id="search-pokemon"
+          >
+            Search
+          </button>
+        </div>
+      </form>
+
+      <form class="update-form none">
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" class="form-control" id="name" name="name" />
+        </div>
+        <div class="mb-3">
+          <label for="type" class="form-label">Type</label>
+          <input type="text" class="form-control" id="type" name="type" />
+        </div>
+        <button type="button" id="update-button" class="btn btn-primary">
+          Update
+        </button>
+      </form>
     </div>
   </body>
 </html>

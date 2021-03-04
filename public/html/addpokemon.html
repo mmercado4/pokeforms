@@ -8,7 +8,7 @@
     <!--Aquí es prefijo "css"-->
     <link rel="stylesheet" href="css/styles.css" />
     <!--Aquí js no es prefijo, es la subcarpeta de PUBLIC-->
-    <script src="/js/post.js"></script>
+    <script src="/js/post.js" defer></script>
     <title>PokeApi</title>
   </head>
   <body class="mb-5 mt-3">
@@ -31,6 +31,9 @@
           <li class="nav-item">
             <a class="nav-link" href="pages">Pages</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="updatepokemon">Update</a>
+          </li>
         </ul>
       </div>
       <form>
@@ -43,7 +46,7 @@
           <input type="text" class="form-control" id="type" name="type" />
         </div>
         <button onclick="addPokemon()" type="button" class="btn btn-primary">
-          Añadir
+          Add
         </button>
       </form>
     </div>
