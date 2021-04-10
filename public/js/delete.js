@@ -6,12 +6,12 @@ const getAllPokemons = () => {
     .then((response) => response.json())
     .then((data) => {
       //console.log(data);
-      let pokeList = data.pokemons
+      let pokeList = data
         .map((pokemon) => {
           let name = pokemon.name[0].toUpperCase() + pokemon.name.substring(1);
           return `<li class="d-flex justify-content-between align-items-center list-group-item">
           <p>${name}</p>
-          <button id="${pokemon.id}" type="button" class="btn btn-danger fill">Delete</button>
+          <button id="${pokemon._id}" type="button" class="btn btn-danger fill">Delete</button>
           </li>`;
         })
         .join("");

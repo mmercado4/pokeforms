@@ -4,9 +4,9 @@ const getPage = (page = 1) => {
   fetch(urlApi)
     .then((response) => response.json())
     .then((data) => {
-      //console.log(data);
+      console.log(data);
 
-      let pokeList = data.pokemons
+      let pokeList = data
         .map((pokemon) => {
           let name = pokemon.name[0].toUpperCase() + pokemon.name.substring(1);
           return `<li class="text-center list-group-item">${name}</li>`;
@@ -15,6 +15,7 @@ const getPage = (page = 1) => {
 
       list.innerHTML = pokeList;
       let numPages = data.pages;
+      console.log(numPages);
       let pagination = document.querySelector("ul.pagination");
       console.log(numPages);
       pagination.innerHTML = "";

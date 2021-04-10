@@ -1,12 +1,12 @@
 const searchButton = document.querySelector("#search-pokemon");
-const pokeId = document.querySelector("#search-id");
+const name = document.querySelector("#search-name");
 const updateButton = document.querySelector("#update-button");
 
-const searchPokemon = (id) => {
-  if (!id) {
-    alert("Write the ID please!");
+const searchPokemon = (name) => {
+  if (!name) {
+    alert("Write anything!");
   } else {
-    const urlApi = `http://localhost:1212/api/onepokemon?id=${id}`;
+    const urlApi = `http://localhost:1212/api/pokemons/${name}`;
     const opts = {
       method: "GET",
       headers: {
@@ -78,5 +78,5 @@ const putPokemon = (pokemon) => {
 };
 
 searchButton.addEventListener("click", () => {
-  searchPokemon(pokeId.value);
+  searchPokemon(document.querySelector("#search-name").value);
 });
