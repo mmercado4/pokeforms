@@ -1,4 +1,5 @@
-const urlApi = "http://localhost:1212/api/pokemons";
+const URI_HEROKU = "https://mms-pokeapi.herokuapp.com";
+const urlApi = URI_HEROKU + "/api/pokemons";
 const list = document.querySelector(".poke-list");
 
 const getAllPokemons = () => {
@@ -6,7 +7,7 @@ const getAllPokemons = () => {
     .then((response) => response.json())
     .then((data) => {
       //console.log(data);
-      let pokeList = data
+      let pokeList = data.pokemons
         .map((pokemon) => {
           let name = pokemon.name[0].toUpperCase() + pokemon.name.substring(1);
           return `<li class="d-flex justify-content-between align-items-center list-group-item">
@@ -32,7 +33,7 @@ const getAllPokemons = () => {
 };
 
 const deletePokemon = (id) => {
-  let url = "http://localhost:1212/api/pokemons";
+  let url = urlApi;
   let obj = { id: id };
   const opts = {
     method: "DELETE",

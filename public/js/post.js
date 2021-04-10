@@ -1,3 +1,6 @@
+const URI_HEROKU = "https://mms-pokeapi.herokuapp.com";
+const urlApi = URI_HEROKU + "/api/pokemons";
+
 const addPokemon = () => {
   const name = document.querySelector("#name").value;
   const type = document.querySelector("#type").value;
@@ -5,7 +8,6 @@ const addPokemon = () => {
     name: name,
     type: type,
   };
-  const url = "http://localhost:1212/api/pokemons";
   const opts = {
     method: "POST",
     headers: {
@@ -14,7 +16,7 @@ const addPokemon = () => {
     body: JSON.stringify(newPokemon), //Ojo hay que parsearlo
   };
   if (name || type) {
-    fetch(url, opts)
+    fetch(urlApi, opts)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);

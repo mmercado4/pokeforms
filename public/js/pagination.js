@@ -1,12 +1,14 @@
+const URI_HEROKU = "https://mms-pokeapi.herokuapp.com";
+
 const getPage = (page = 1) => {
-  const urlApi = `http://localhost:1212/api/pokemons/page/${page}`;
+  const urlApi = `${URI_HEROKU}/api/pokemons/page/${page}`;
   const list = document.querySelector(".poke-list");
   fetch(urlApi)
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
 
-      let pokeList = data
+      let pokeList = data.pokemons
         .map((pokemon) => {
           let name = pokemon.name[0].toUpperCase() + pokemon.name.substring(1);
           return `<li class="text-center list-group-item">${name}</li>`;
@@ -22,7 +24,7 @@ const getPage = (page = 1) => {
       for (let i = 1; i <= numPages; i++) {
         let li = document.createElement("li");
         let a = document.createElement("a");
-        a.href = `http://localhost:1313/page/${i}`; //Si no ponemos el href, no se va a ningún lado.
+        a.href = `https://mms-pokeform.herokuapp.com/page/${i}`; //Si no ponemos el href, no se va a ningún lado.
         a.textContent = i;
         li.className = "page-item";
         if (parseInt(page) === i) li.classList.add("active"); //Ojooo hay que hacer parse INT.

@@ -2,23 +2,26 @@ const searchButton = document.querySelector("#search-pokemon");
 const name = document.querySelector("#search-name");
 const updateButton = document.querySelector("#update-button");
 
+const URI_HEROKU = "https://mms-pokeapi.herokuapp.com";
+const urlApi = URI_HEROKU + "/api/pokemons";
+
 const searchPokemon = (name) => {
   if (!name) {
     alert("Write anything!");
   } else {
-    const urlApi = `http://localhost:1212/api/pokemons/${name}`;
+    const url = `${urlApi}/${name}`;
     const opts = {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
       },
     };
-    fetch(urlApi, opts)
+    fetch(url, opts)
       .then((response) => response.json())
       .then((data) => {
         if (data.message === "Pokemon not found!") {
-          alert(`Pokémon ${id} not found!`);
-          document.querySelector("#search-id").value = "";
+          alert(`Pokémon not found!`);
+          document.querySelector("#search-name").value = "";
         } else {
           const updateForm = document.querySelector(".update-form");
           updateForm.classList.remove("none");
@@ -41,7 +44,7 @@ const putPokemon = (pokemon) => {
     `You are gonna update ${pokemon.name}. Are you sure?`
   );
   if (sure) {
-    const urlApi = `http://localhost:1212/api/pokemons/${pokemon.id}`;
+    const url = `${urlApi}/${pokemon.id}`;
     let newName = document.querySelector("#name").value;
     let newType = document.querySelector("#type").value;
     let newParams = {
@@ -55,7 +58,7 @@ const putPokemon = (pokemon) => {
       },
       body: JSON.stringify(newParams),
     };
-    fetch(urlApi, opts)
+    fetch(url, opts)
       .then((response) => response.json())
       .then((data) => {
         if (data.message === "Pokemon modified!") {
